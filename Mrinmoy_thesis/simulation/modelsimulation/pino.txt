@@ -1,0 +1,26 @@
+* Code for memristor model proposed by Dr. Pino et al.
+* Connections:
+* TE: Top electrode
+* BE: Bottom electrode
+* RSV: External connection to plot resistance
+* that is not used otherwise
+.SUBCKT MEM_PINO TE BE RSV
+* Ron: Minimum device resistance
+* Roff: Maximum device resistance
+* Th: Positive voltage threshold
+* Tl:  Negative voltage threshold
+* Kh1, Kh2: Fitting params for pos voltage
+* Kl1, Kl2: Fitting params for neg voltage
+.params Ron=160 Roff=1200 Th=0.2 Tl=-0.35 Kh1=5.5e6 Kh2=-20
++Kl1=4e6 Kl2=20
+* Fits the change in resistance to characterization data
+.func Rt(V1, V2) = IF( V1 <= Th, IF(V1 >= Tl, 0, IF(V2 <
++Roff, Kl1*exp(Kl2*(V1-Tl)), 0) ), IF(V2 > Ron, -
++Kh1*exp(Kh2*(V1-Th)), 0) )
+* Circuit to integrate to find resistance
+Gx 0 RSV value={Rt(V(TE,BE),V(RSV))}
+Cx RSV 0 {1}
+.ic V(RSV) = Roff
+* Current source representing memristor
+Gmem TE BE value = {V(TE,BE)/V(RSV)}
+.ENDS MEM_PINO

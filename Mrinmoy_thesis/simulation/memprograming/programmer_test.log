@@ -1,0 +1,26 @@
+Circuit: * C:\Users\mrinmoy\Google Drive\Thesis_shared_folder\Mrinmoy_thesis\simulation\memprograming\programmer_test.asc
+
+Limiting rise time of source v4 to 1e-007
+Limiting fall time of source v4 to 1e-007
+WARNING: Node M is floating.
+
+Direct Newton iteration for .op point succeeded.
+
+Date: Sat Nov 21 22:21:26 2015
+Total elapsed time: 2.145 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 328600
+traniter = 328593
+tranpoints = 161755
+accept = 149926
+rejected = 11829
+matrix size = 11
+fillins = 0
+solver = Normal
+Matrix Compiler1: 342 bytes object code size  0.2/0.1/[0.1]
+Matrix Compiler2: off  [0.1]/0.2/0.1
+
+

@@ -1,0 +1,17 @@
+/* This is a stylesheet */
+body { background-image: url(images/marbpaperwhi.jpg) }
+p.cir { font-family:courier, mono; color:#000080 }
+p.out { font-family:courier, mono; color:blue }
+p.cen { text-align:center }
+a.blk { font-family:courier, mono; color:black }
+a.undr { text-decoration: underline}
+a.blue { color: blue }
+a.red { color: red }
+p.blue { color: blue }
+
+a.symb { font-family = "symbol" }
+a.cour { font-family = "courier" }
+a.blak_cour { font-family = "courier"; color: black }
+p.cour { font-family = "courier" }
+p.blue_cour { font-family = "courier"; color: blue }
+span.symb { font-family= "symbol" }

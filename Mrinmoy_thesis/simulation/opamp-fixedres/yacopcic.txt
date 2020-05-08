@@ -1,0 +1,18 @@
+
+.subckt MEM_YAKOPCIC TE BE XSV
+.params a1=0.2 a2=0.2 b=0.05 Vp=1.1 Vn=1.1 Ap=1.9E9
++An=1.9E9 xp=0.675 xn=0.675 alphap=.01 alphan=.01 xo=0.001 eta=1
+.func wp(V) = ((xp-V)/(1-xp)+1)
+.func wn(V) = V/(1-xn)
+.func G(V) = IF(V <= Vp, IF(V >= -Vn, 0, -An*(exp(-
++V) -exp(Vn))), Ap*(exp(V) -exp(Vp)))
+.func te0(V2) = exp(-alphap*(V2-xp))*((xp-V2)/(1-xp)+1);
+.func te1(V2) = if(V2>=xp,te0(V2),1)
+.func F(V1,V2) = IF(((eta*V1) >= 0),te1(V2),IF(V2 <= (1-xn),exp(alphan*(V2+xn-1))*wn(V2) ,1))
+.func IVRel(V1,V2) = IF(V1 >= 0, a1*V2*sinh(b*V1),
++a2*V2*sinh(b*V1) )
+Cx XSV 0 {1}
+.ic V(XSV) = xo
+Gx 0 XSV value={eta*F(V(TE,BE),V(XSV,0))*G(V(TE,BE))}
+Gm TE BE value = {IVRel(V(TE,BE),V(XSV,0))}
+.ends MEM_YAKOPCIC

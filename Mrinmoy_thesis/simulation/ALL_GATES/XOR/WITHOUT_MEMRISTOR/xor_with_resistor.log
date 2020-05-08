@@ -1,0 +1,23 @@
+Circuit: * M:\thesis\simulation\ALL_GATES\XOR\WITHOUT_MEMRISTOR\xor_with_resistor.asc
+
+Direct Newton iteration for .op point succeeded.
+
+Date: Sun Sep 13 20:31:33 2015
+Total elapsed time: 3.121 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 9211
+traniter = 9202
+tranpoints = 3374
+accept = 2792
+rejected = 582
+matrix size = 158
+fillins = 85
+solver = Normal
+Thread vector: 508.1/386.5[4] 120.8/93.8[4] 60.3/29.4[4] 4.3/19.8[1]  2592/500
+Matrix Compiler1: 12.1 KB object code size  26.6/10.7/[5.0]
+Matrix Compiler2: 19.4 KB object code size  22.8/13.5/[5.5]
+
+

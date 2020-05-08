@@ -1,0 +1,97 @@
+Circuit: * J:\thesis\simulations\problem.asc
+
+Limiting rise time of source v6 to 1e-007
+Limiting fall time of source v6 to 1e-007
+V5: Removing PWL point (5.04e-006,-4)
+V5: Removing PWL point (9.08e-006,-5)
+V5: Removing PWL point (1.11e-005,-3)
+V5: Removing PWL point (1.312e-005,-4)
+V5: Removing PWL point (1.414e-005,-5)
+Limiting rise time of source v2 to 5e-008
+Limiting fall time of source v2 to 5e-008
+V1: Removing PWL point (5.04e-006,-4)
+V1: Removing PWL point (9.08e-006,-5)
+WARNING: Node M is floating.
+
+WARNING: Less than two connections to node PROGR1:N001.  This node is used by V:PROGR1:1.
+WARNING: Less than two connections to node PROGR1:N003.  This node is used by V:PROGR1:2.
+WARNING: Less than two connections to node PROGR2:N001.  This node is used by V:PROGR2:1.
+WARNING: Less than two connections to node PROGR2:N003.  This node is used by V:PROGR2:2.
+WARNING: Less than two connections to node PROGR3:N001.  This node is used by V:PROGR3:1.
+WARNING: Less than two connections to node PROGR3:N003.  This node is used by V:PROGR3:2.
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+Gmin = 1.07374
+Gmin = 0.115292
+Gmin = 0.0123794
+Gmin = 0.00132923
+Gmin = 0.000142725
+Gmin = 1.5325e-005
+Gmin = 1.6455e-006
+Gmin = 1.76685e-007
+Gmin = 1.89714e-008
+Gmin = 2.03704e-009
+Gmin = 2.18725e-010
+Gmin = 2.34854e-011
+Gmin = 2.52173e-012
+Gmin = 2.70769e-013
+Gmin = 0
+Gmin stepping succeeded in finding the operating point.
+
+Ignoring empty pin current: Ix(u1:1)
+Ignoring empty pin current: Ix(u1:2)
+Ignoring empty pin current: Ix(u1:3)
+Ignoring empty pin current: Ix(switch_r1:prog_on_pos)
+Ignoring empty pin current: Ix(switch_r1:prog_on_neg)
+Ignoring empty pin current: Ix(switch_r1:main_ckton_pos)
+Ignoring empty pin current: Ix(switch_r1:main_ckton_neg)
+Ignoring empty pin current: Ix(progr1:input)
+Ignoring empty pin current: Ix(switch_r2:prog_on_pos)
+Ignoring empty pin current: Ix(switch_r2:prog_on_neg)
+Ignoring empty pin current: Ix(switch_r2:main_ckton_pos)
+Ignoring empty pin current: Ix(switch_r2:main_ckton_neg)
+Ignoring empty pin current: Ix(progr2:input)
+Ignoring empty pin current: Ix(switch_r3:prog_on_pos)
+Ignoring empty pin current: Ix(switch_r3:prog_on_neg)
+Ignoring empty pin current: Ix(switch_r3:main_ckton_pos)
+Ignoring empty pin current: Ix(switch_r3:main_ckton_neg)
+Ignoring empty pin current: Ix(progr3:input)
+Ignoring empty pin current: Ix(u1:1)
+Ignoring empty pin current: Ix(u1:2)
+Ignoring empty pin current: Ix(u1:3)
+Ignoring empty pin current: Ix(switch_r1:prog_on_pos)
+Ignoring empty pin current: Ix(switch_r1:prog_on_neg)
+Ignoring empty pin current: Ix(switch_r1:main_ckton_pos)
+Ignoring empty pin current: Ix(switch_r1:main_ckton_neg)
+Ignoring empty pin current: Ix(progr1:input)
+Ignoring empty pin current: Ix(switch_r2:prog_on_pos)
+Ignoring empty pin current: Ix(switch_r2:prog_on_neg)
+Ignoring empty pin current: Ix(switch_r2:main_ckton_pos)
+Ignoring empty pin current: Ix(switch_r2:main_ckton_neg)
+Ignoring empty pin current: Ix(progr2:input)
+Ignoring empty pin current: Ix(switch_r3:prog_on_pos)
+Ignoring empty pin current: Ix(switch_r3:prog_on_neg)
+Ignoring empty pin current: Ix(switch_r3:main_ckton_pos)
+Ignoring empty pin current: Ix(switch_r3:main_ckton_neg)
+Ignoring empty pin current: Ix(progr3:input)
+
+Date: Sat Sep 05 04:23:37 2015
+Total elapsed time: 3.315 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 46046
+traniter = 45688
+tranpoints = 22815
+accept = 18230
+rejected = 4585
+matrix size = 80
+fillins = 43
+solver = Normal
+Thread vector: 69.0/40.1[2] 12.9/9.5[2] 4.7/14.3[1] 1.2/13.1[1]  2592/500
+Matrix Compiler1: 4.35 KB object code size  3.3/2.7/[1.2]
+Matrix Compiler2: 6.56 KB object code size  1.9/3.2/[1.7]
+
+

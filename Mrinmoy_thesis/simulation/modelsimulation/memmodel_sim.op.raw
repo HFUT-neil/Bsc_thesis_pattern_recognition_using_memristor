@@ -1,0 +1,25 @@
+Title: * M:\thesis\simulation\modelsimulation\memmodel_sim.asc
+Date: Sun Sep 13 14:03:06 2015
+Plotname: Operating Point
+Flags: real
+No. Variables: 12
+No. Points:            1
+Offset:   0.0000000000000000e+000
+Command: Linear Technology Corporation LTspice IV
+Backannotation: y1 te be xsv
+Backannotation: y2 te be xsv
+Variables:
+	0	V(v1)	voltage
+	1	V(m2)	voltage
+	2	V(n001)	voltage
+	3	V(m1)	voltage
+	4	I(V2)	device_current
+	5	I(V1)	device_current
+	6	Ix(y1:TE)	subckt_current
+	7	Ix(y1:BE)	subckt_current
+	8	Ix(y1:XSV)	subckt_current
+	9	Ix(y2:TE)	subckt_current
+	10	Ix(y2:BE)	subckt_current
+	11	Ix(y2:XSV)	subckt_current
+Binary:
+™™™™™™©¿®Gá=ÍÌL½®Gá=|D8|D8|D¸|D8¯²÷)|D¸|D8¯²÷)

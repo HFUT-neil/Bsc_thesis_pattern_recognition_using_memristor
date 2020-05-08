@@ -1,0 +1,54 @@
+Circuit: * C:\Users\mrinmoy\Google Drive\Thesis_shared_folder\Mrinmoy_thesis\simulation\ALL_GATES\OR\WITH_MEMRISTOR\ADALINE.asc
+
+Vpbias: Removing PWL point (0.000435,-1)
+Vpbias: Removing PWL point (0.001021,-1)
+Limiting rise time of source vin1 to 1e-005
+Limiting fall time of source vin1 to 1e-005
+Vp1: Removing PWL point (0.000437,-1)
+Limiting rise time of source vin2 to 2e-005
+Limiting fall time of source vin2 to 2e-005
+Vp2: Removing PWL point (0.000448,-1)
+WARNING: Node M1 is floating.
+WARNING: Node M2 is floating.
+WARNING: Node M0 is floating.
+
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+Gmin = 1.07374
+Gmin = 0.115292
+Gmin = 0.0123794
+Gmin = 0.00132923
+Gmin = 0.000142725
+Gmin = 1.5325e-005
+Gmin = 1.6455e-006
+Gmin = 1.76685e-007
+Gmin = 1.89714e-008
+Gmin = 2.03704e-009
+Gmin = 2.18725e-010
+Gmin = 2.34854e-011
+Gmin = 2.52173e-012
+Gmin = 2.70769e-013
+Gmin = 0
+Gmin stepping succeeded in finding the operating point.
+
+
+Date: Tue Feb 16 17:24:59 2016
+Total elapsed time: 1.484 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 25647
+traniter = 25213
+tranpoints = 11310
+accept = 9496
+rejected = 1814
+matrix size = 84
+fillins = 48
+solver = Normal
+Thread vector: 46.2/26.9[4] 10.5/10.1[1] 4.0/16.4[1] 0.4/13.4[1]  2592/500
+Matrix Compiler1: 5.34 KB object code size  2.1/0.9/[0.6]
+Matrix Compiler2: 8.51 KB object code size  1.2/1.5/[1.0]
+
+

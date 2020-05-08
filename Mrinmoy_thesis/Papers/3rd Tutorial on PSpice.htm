@@ -1,0 +1,197 @@
+<!--?xml version="1.0" encoding="iso-8859"?-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <title>3rd Tutorial on PSpice</title>
+  <meta http-equiv="content-type" content="text/html; charset=windows-1252">
+  <link rel="stylesheet" type="text/css" href="3rd%20Tutorial%20on%20PSpice_files/pspice.css">
+</head>
+<body>
+<h2>3rd Tutorial on PSpice</h2>
+<h3>Simple Subcircuits in PSpice</h3>
+<p>One of the more useful concepts in PSpice is the use of <em>subcircuits</em> to group
+elements into clusters in order to replicate the clusters without having to re-enter all
+the elements each time.&nbsp; This is very useful for several reasons.&nbsp; First is the
+labor savings of replacing many lines of circuit data with a single subcircuit call.
+&nbsp; Second, the use of a subcircuit usually improves clarity by removing confusing
+clutter.&nbsp; The user can suppress printing unwanted details internal to a subcircuit,
+thus making the output easier to understand.&nbsp; If desired, the user can place
+often-used subcircuits into an <em>include</em> file so that the main source file for the
+problem is kept simple.&nbsp; Then the definition of the subcircuit is out of sight
+entirely.</p>
+<h4>Coding a Subcircuit<a name="sub_code"></a></h4>
+<p>Each subcircuit used in a study must have a unique name.&nbsp; This is true of any
+other circuit element.&nbsp; Also, there must be a list of at least two nodes that can be
+connected to elements external to the subcircuit.&nbsp; A subcircuit can have many
+external node connections, if needed.&nbsp; Later, we will find that parameters can be
+passed to a subcircuit in order to allow unique behavior and responses from an instance of
+a subcircuit.</p>
+<p>The initial line of a subcircuit section must begin with ".SUBCKT," followed
+by the name and then the external node list.&nbsp; After that, optional features (not to
+be discussed yet) can be added.&nbsp; The best method of understanding the use of a
+subcircuit is by example.&nbsp; Below, we find a cluster of components that can be
+combined into a subcircuit.</p>
+
+<p class="cen"><img src="3rd%20Tutorial%20on%20PSpice_files/pst03a.gif" alt="A Subcircuit in Detail" height="353" width="380"></p>
+
+<p>Note that nodes 5, 12 and 18 have external connections.&nbsp; Therefore, they 
+  must be included in the node list in the subcircuit definition.&nbsp; Nodes 
+  10 and 13 do not have external connections and need not be (indeed <em>should</em> 
+  not be) included in this node list.&nbsp; They are internal nodes and will be 
+  used to help define the subcircuit. &nbsp; Now, we can code the above subcircuit 
+  as follows.&nbsp; Note that the code could be embedded into the rest of the 
+  code for the main circuit or could be placed in a separate <em>include</em> 
+  file.</p>
+
+<p class="cir">*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  nodelist<br>
+  .SUBCKT Example_1&nbsp;&nbsp; 5&nbsp;&nbsp; 12&nbsp;&nbsp; 18<br>
+  Iw&nbsp;&nbsp; 10&nbsp;&nbsp; 12&nbsp;&nbsp; DC&nbsp;&nbsp; 10A<br>
+  Ra&nbsp;&nbsp;&nbsp; 5&nbsp;&nbsp; 12&nbsp;&nbsp; 5.0<br>
+  Rb&nbsp;&nbsp;&nbsp; 5&nbsp;&nbsp; 13&nbsp;&nbsp; 4.0<br>
+  Rc&nbsp;&nbsp; 12&nbsp;&nbsp; 13&nbsp;&nbsp; 2.0<br>
+  Rd&nbsp;&nbsp;&nbsp; 5&nbsp;&nbsp; 18&nbsp;&nbsp; 8.0<br>
+  Re&nbsp;&nbsp; 13&nbsp;&nbsp; 18&nbsp;&nbsp; 3.0<br>
+  Rf&nbsp;&nbsp; 10&nbsp;&nbsp; 13&nbsp;&nbsp; 1.0<br>
+  Rg&nbsp;&nbsp; 10&nbsp;&nbsp; 18&nbsp;&nbsp; 6.0<br>
+  .ENDS</p>
+<p>Note that the subcircuit section must be terminated with a ".ENDS" 
+  command.</p>
+<h4>Invoking a Subcircuit<a name="invoking_sub"></a></h4>
+<p>All subcircuit calls are made by declaring a part with a unique name beginning 
+  with "X," followed by the node list and then the subcircuit name.&nbsp; 
+  The node list in the calling statement must have the same number of nodes as 
+  the node list in the subcircuit definition.&nbsp; To demonstrate the use of 
+  the calling statement, we present the following main circuit which contains 
+  two instances of the above subcircuit.&nbsp; X1 and X2 are the two instances 
+  of the subcircuit "Example_1."&nbsp; For added clarity, the subcircuit's 
+  defined external nodes are shown in parentheses.&nbsp; Note that these nodes 
+  are mapped into the main circuit by <em>different names</em>.</p>
+<p class="cen"><img src="3rd%20Tutorial%20on%20PSpice_files/pst03b.gif" alt="Embedded Subcircuits" height="226" width="570"></p>
+<p>The code for the above circuit with the subcircuit included follows:</p>
+<p class="cir">Subcircuit Example No. 1<br>
+  *&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  nodelist<br>
+  .SUBCKT Example_1&nbsp;&nbsp; 5&nbsp;&nbsp; 12&nbsp;&nbsp; 
+  18<br>
+  Iw&nbsp;&nbsp; 10&nbsp;&nbsp; 12&nbsp;&nbsp; DC&nbsp;&nbsp; 10A<br>
+  Ra&nbsp;&nbsp;&nbsp; 5&nbsp;&nbsp; 12&nbsp;&nbsp; 2.0<br>
+  Rb&nbsp;&nbsp;&nbsp; 5&nbsp;&nbsp; 13&nbsp;&nbsp; 5.0<br>
+  Rc&nbsp;&nbsp; 12&nbsp;&nbsp; 13&nbsp;&nbsp; 2.0<br>
+  Rd&nbsp;&nbsp;&nbsp; 5&nbsp;&nbsp; 18&nbsp;&nbsp; 8.0<br>
+  Re&nbsp;&nbsp; 13&nbsp;&nbsp; 18&nbsp;&nbsp; 3.0<br>
+  Rf&nbsp;&nbsp; 10&nbsp;&nbsp; 13&nbsp;&nbsp; 1.0<br>
+  Rg&nbsp;&nbsp; 10&nbsp;&nbsp; 18&nbsp;&nbsp; 6.0<br>
+  .ENDS<br>
+  Vs&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp; DC&nbsp;&nbsp; 50V<br>
+  Ra&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp; 1.0&nbsp; ; different 
+  from Ra above<br>
+  Rb&nbsp;&nbsp;&nbsp; 3&nbsp;&nbsp;&nbsp; 4&nbsp;&nbsp; 3.0&nbsp; ; different 
+  from Rb above<br>
+  Rc&nbsp;&nbsp;&nbsp; 7&nbsp;&nbsp;&nbsp; 0&nbsp; 25.0&nbsp; ; different from 
+  Rc above<br>
+  Rd&nbsp;&nbsp;&nbsp; 6&nbsp;&nbsp;&nbsp; 0&nbsp; 45.0&nbsp; ; different from 
+  Rd above<br>
+  *&nbsp;&nbsp;&nbsp;&nbsp; nodelist&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name<br>
+  X1&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp; 7&nbsp;&nbsp;&nbsp; 3&nbsp;&nbsp; Example_1<br>
+  X2&nbsp;&nbsp;&nbsp; 4&nbsp;&nbsp;&nbsp; 6&nbsp;&nbsp;&nbsp; 5&nbsp;&nbsp; Example_1<br>
+  .END</p>
+<h4>Scope of Element Names and Nodes in a Subcircuit<a name="scope"></a></h4>
+
+<p>Scope of names and nodes is local to a subcircuit.&nbsp; In the main circuit 
+  of which the above subcircuit is a part, there is a node 5&nbsp; and there are 
+  resistors with the names of "Ra," "Rb," "Rc," 
+  and "Rd," and PSpice can keep these apparent duplications separated.&nbsp; 
+  If the subcircuit were invoked as "X1," for example, PSpice would 
+  consider the subcircuit parts as "X1.Ra," "X1.Rb" and so 
+  on.&nbsp; Additionally, the internal node numbers would be treated as "X1.5," 
+  "X2.5," "X2.13" and so forth.&nbsp; Thus PSpice maintains 
+  uniqueness of element names and node numbers.</p>
+<h4>Nesting of Subcircuits<a name="nesting"></a></h4>
+<p>Subcircuit <em>calls</em> may be nested as long as they are not circular.&nbsp; In
+other words, you can have a part name starting with "X" within a .SUBCKT/.ENDS
+block provided that the "X" part definition does not call on that block for its
+own definition.</p>
+<p>However, subcircuit <em>definitions</em> may <em>not</em> be nested.&nbsp; I.e., you
+can't have one .SUBCKT/.ENDS block nested within another.</p>
+<h4>An Op-Amp Example<a name="OpAmp_Example"></a></h4>
+<p>At this stage of knowledge about PSpice, we can model a simple op-amp as a subcircuit.
+&nbsp; Alas, we will not be able to show its saturation characteristics until we explain
+the use of the "TABLE" feature of PSpice.&nbsp; However, we can do a credible
+job of modeling an op-amp as long as it isn't allowed to saturate.&nbsp; The figure below
+illustrates this simple model of an op-amp.</p>
+<p class="cen"><img src="3rd%20Tutorial%20on%20PSpice_files/pst03c.gif" alt="An Opamp as a Subcircuit" height="229" width="467"></p>
+<p>In an ideal op-amp, Ri, the input resistance, and A, the open-loop gain, are 
+  infinite. &nbsp; Also, Ro, the output resistance, is zero.&nbsp; Here, we will 
+  use "typical" values of a practical op-amp.&nbsp; Let A = 100,000, 
+  Ri = 500 k&#937;, and Ro = 50 &#937;.&nbsp; 
+  After all, PSpice doesn't accept infinity as a number and resistors cannot be 
+  set to zero.&nbsp; We will also use <em>text</em> for node designations here.&nbsp; 
+  Also, note the internal node "int" that is not included in the node 
+  list.&nbsp; The key part to the op-amp is the voltage-controlled dependent voltage 
+  source designated as part "Ex" in the listing.&nbsp; For a more complete 
+  description of this part, see <a href="http://www.uta.edu/ee/hw/pspice/pspice02.htm">Tutorial No.&nbsp;2</a>, 
+  where dependent sources are introduced.&nbsp; Code to define the subcircuit 
+  follows.</p>
+<p class="cir">.SUBCKT OpAmp p_in n_in com out<br>
+Ex&nbsp;&nbsp; int&nbsp;&nbsp; com&nbsp;&nbsp; p_in&nbsp;&nbsp; n_in&nbsp;&nbsp; 1e5<br>
+  Ri&nbsp;&nbsp; p_in&nbsp; n_in&nbsp; 500k<br>
+Ro&nbsp;&nbsp; int&nbsp;&nbsp; out&nbsp;&nbsp; 50.0<br>
+.ENDS</p>
+<p>The main circuit with which we will test this op-amp subcircuit follows.&nbsp; We will
+use a simple inverting amplifier circuit for which we can verify the results by
+inspection.</p>
+<p class="cen"><img src="3rd%20Tutorial%20on%20PSpice_files/pst03d.gif" alt="Inverting Amplifier Circuit with Opamp Subcircuit"></p>
+<p class="cir">Subcircuit Example No. 2 - Inverting OpAmp<br>
+ .SUBCKT OpAmp p_in n_in com out<br>
+Ex&nbsp;&nbsp; int&nbsp;&nbsp; com&nbsp;&nbsp; p_in&nbsp;&nbsp; n_in&nbsp;&nbsp; 1e5<br>
+  Ri&nbsp;&nbsp; p_in&nbsp; n_in&nbsp; 500k<br>
+Ro&nbsp;&nbsp; int&nbsp;&nbsp; out&nbsp;&nbsp; 50.0<br>
+.ENDS<br>
+Vg&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp; DC
+&nbsp;&nbsp;&nbsp;&nbsp; 50mV<br>
+Rg&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp; 5k<br>
+Rf&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp; 3&nbsp;&nbsp;&nbsp;&nbsp; 50k<br>
+RL&nbsp;&nbsp; 3&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp; 20k<br>
+X1&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp; 0
+&nbsp;&nbsp;&nbsp;&nbsp; 3&nbsp;&nbsp;&nbsp; OpAmp<br>
+.END</p>
+<p>The output file (edited to remove excess lines, etc.,) is as follows:</p>
+<p class="out">Subcircuit Example No. 2 - Inverting OpAmp<br>
+**** CIRCUIT DESCRIPTION<br>
+.SUBCKT OpAmp p_in n_in com out<br>
+Ex int com p_in n_in 1e5<br>
+  RI p_in n_in 500k<br>
+Ro int out 50.0<br>
+.ENDS<br>
+Vg 1 0 DC 50mV<br>
+Rg 1 2 5k<br>
+Rf 2 3 50k<br>
+RL 3 0 20k<br>
+X1 0 2 0 3 OpAmp<br>
+Subcircuit Example No. 2 - Inverting OpAmp<br>
+**** SMALL SIGNAL BIAS SOLUTION TEMPERATURE = 27.000 DEG C<br>
+NODE VOLTAGE NODE VOLTAGE NODE VOLTAGE NODE VOLTAGE<br>
+&nbsp;( 1) .0500 ( 2) 5.017E-06 ( 3) -.4999 (X1.int) -.5017 <br>
+VOLTAGE SOURCE CURRENTS<br>
+NAME CURRENT<br>
+Vg -9.999E-06<br>
+TOTAL POWER DISSIPATION 5.00E-07 WATTS<br>
+JOB CONCLUDED<br>
+TOTAL JOB TIME .19</p>
+<h4>Discussion of Results</h4>
+<p>Had this op-amp been ideal, the closed loop gain would have been -10 &nbsp; 
+  -(Rf&nbsp;/&nbsp;Rg).&nbsp; Then the output voltage would have been -0.5V.&nbsp; 
+  Instead, we calculated -0.4999V.&nbsp; Also, an ideal op-amp would have produced 
+  a voltage of zero at the negative input.&nbsp; Instead, we see about 5 microvolts.&nbsp; 
+  These discrepancies are due to the more realistic model of the op-amp.&nbsp; 
+  Yet the difference is small. &nbsp; It seems that the concept of using the ideal 
+  op-amp model does not lead to excessive error in this case.</p>
+<p>The advantage of using the subcircuit in PSpice is now apparent. &nbsp; We 
+  could have replicated the subcircuit many times, using only one line of code 
+  per replication.&nbsp; Later, we will add to our knowledge of the features of 
+  subcircuits.</p>
+<p><a href="http://www.uta.edu/ee/hw/pspice/index.php">Back to Main Page</a></p>
+<script type="text/javascript" src="3rd%20Tutorial%20on%20PSpice_files/lastmod.js"></script><div id="SL_shadow_translator"><div style="display: none; top: -10000px; left: -10000px;" id="SL_shadow_balloon"><div id="SLplanshet"><div id="SLarrowTOP"></div><div id="SLtopbar" align="left"><table class="SLtable" border="0" cellpadding="0" cellspacing="0" height="25" width="100%"><tr><td class="SLtd" align="left" width="15"><div id="SLlogo"></div></td><td class="SLtd" align="right" valign="center" width="37"><input title="Lock-in language" id="SLloc" type="checkbox"></td><td class="SLtd" align="left" width="95"><select class="SLselectbox" id="SLfrom"><option selected="selected" value="auto">Detect language</option><option value="af">Afrikaans</option><option value="sq">Albanian</option><option value="ar">Arabic</option><option value="hy">Armenian</option><option value="az">Azerbaijani</option><option value="eu">Basque</option><option value="be">Belarusian</option><option value="bn">Bengali</option><option value="bg">Bulgarian</option><option value="ca">Catalan</option><option value="zh">Chinese (Simplified)</option><option value="zt">Chinese (Traditional)</option><option value="hr">Croatian</option><option value="cs">Czech</option><option value="da">Danish</option><option value="nl">Dutch</option><option value="en">English</option><option value="eo">Esperanto</option><option value="et">Estonian</option><option value="tl">Filipino</option><option value="fi">Finnish</option><option value="fr">French</option><option value="gl">Galician</option><option value="ka">Georgian</option><option value="de">German</option><option value="el">Greek</option><option value="gu">Gujarati</option><option value="ht">Haitian Creole</option><option value="iw">Hebrew</option><option value="hi">Hindi</option><option value="hu">Hungarian</option><option value="is">Icelandic</option><option value="id">Indonesian</option><option value="ga">Irish</option><option value="it">Italian</option><option value="ja">Japanese</option><option value="kn">Kannada</option><option value="ko">Korean</option><option value="lo">Lao</option><option value="la">Latin</option><option value="lv">Latvian</option><option value="lt">Lithuanian</option><option value="mk">Macedonian</option><option value="ms">Malay</option><option value="mt">Maltese</option><option value="no">Norwegian</option><option value="fa">Persian</option><option value="pl">Polish</option><option value="pt">Portuguese</option><option value="ro">Romanian</option><option value="ru">Russian</option><option value="sr">Serbian</option><option value="sk">Slovak</option><option value="sl">Slovenian</option><option value="es">Spanish</option><option value="sw">Swahili</option><option value="sv">Swedish</option><option value="ta">Tamil</option><option value="te">Telugu</option><option value="th">Thai</option><option value="tr">Turkish</option><option value="uk">Ukrainian</option><option value="ur">Urdu</option><option value="vi">Vietnamese</option><option value="cy">Welsh</option><option value="yi">Yiddish</option></select></td><td class="SLtd" align="center" valign="center" width="10"><div title=" Switch languages" id="SL_switch"></div></td><td class="SLtd" align="left" valign="center" width="95"><select class="SLselectbox" id="SLto"><option value="af">Afrikaans</option><option value="sq">Albanian</option><option value="ar">Arabic</option><option value="hy">Armenian</option><option value="az">Azerbaijani</option><option value="eu">Basque</option><option value="be">Belarusian</option><option selected="selected" value="bn">Bengali</option><option value="bg">Bulgarian</option><option value="ca">Catalan</option><option value="zh">Chinese (Simplified)</option><option value="zt">Chinese (Traditional)</option><option value="hr">Croatian</option><option value="cs">Czech</option><option value="da">Danish</option><option value="nl">Dutch</option><option value="en">English</option><option value="eo">Esperanto</option><option value="et">Estonian</option><option value="tl">Filipino</option><option value="fi">Finnish</option><option value="fr">French</option><option value="gl">Galician</option><option value="ka">Georgian</option><option value="de">German</option><option value="el">Greek</option><option value="gu">Gujarati</option><option value="ht">Haitian Creole</option><option value="iw">Hebrew</option><option value="hi">Hindi</option><option value="hu">Hungarian</option><option value="is">Icelandic</option><option value="id">Indonesian</option><option value="ga">Irish</option><option value="it">Italian</option><option value="ja">Japanese</option><option value="kn">Kannada</option><option value="ko">Korean</option><option value="lo">Lao</option><option value="la">Latin</option><option value="lv">Latvian</option><option value="lt">Lithuanian</option><option value="mk">Macedonian</option><option value="ms">Malay</option><option value="mt">Maltese</option><option value="no">Norwegian</option><option value="fa">Persian</option><option value="pl">Polish</option><option value="pt">Portuguese</option><option value="ro">Romanian</option><option value="ru">Russian</option><option value="sr">Serbian</option><option value="sk">Slovak</option><option value="sl">Slovenian</option><option value="es">Spanish</option><option value="sw">Swahili</option><option value="sv">Swedish</option><option value="ta">Tamil</option><option value="te">Telugu</option><option value="th">Thai</option><option value="tr">Turkish</option><option value="uk">Ukrainian</option><option value="ur">Urdu</option><option value="vi">Vietnamese</option><option value="cy">Welsh</option><option value="yi">Yiddish</option></select></td><td class="SLtd" align="right" width="6"></td><td class="SLtd" align="right" width="12"><div title="Listen to the translation" id="SL_tts"></div></td><td class="SLtd" align="right" width="22"><div class="SL_copy" title="Copy translation" id="SL_copy"></div></td><td class="SLtd" align="right" width="22"><div class="SL_font_on" title="Font size" id="SL_font"></div></td><td class="SLtd" align="right" width="25"></td><td class="SLtd" align="right" width="22"><div class="SL_pin_off" title="Pin pop-up bubble" id="SL_pin"></div></td></tr></table></div></div><div style="font-size: 11px;" class="SL_sesultLTRRTL" id="SL_result"><div style="margin-bottom:0px"></div></div><div id="SLplanshetBottom"><div id="SLDONATE"></div><span id="SL_Goptions">Options</span><span id="SL_dots1">:</span><span id="SL_Ghelp">Help</span><span id="SL_dots2">:</span><span id="SL_Gfeedback">Feedback</span></div><div id="SLarrowBOT"></div></div></div><p></p><hr><small><em>Last Modified: 10/02/2009 00:58:13</em></small><p></p>
+
+
+</body></html>
