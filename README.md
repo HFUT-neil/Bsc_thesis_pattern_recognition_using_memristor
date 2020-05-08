@@ -1,0 +1,1 @@
+# Bsc_thesis_pattern_recognition_using_memristor
