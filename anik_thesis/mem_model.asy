@@ -1,0 +1,12 @@
+Version 4
+SymbolType BLOCK
+LINE Normal -9 51 32 48
+LINE Normal -52 49 -81 48
+RECTANGLE Normal -9 66 -52 34
+SYMATTR Prefix X
+PIN -80 48 RIGHT 8
+PINATTR PinName TE
+PINATTR SpiceOrder 1
+PIN 32 48 LEFT 8
+PINATTR PinName BE
+PINATTR SpiceOrder 2

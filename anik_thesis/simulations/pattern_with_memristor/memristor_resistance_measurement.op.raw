@@ -1,0 +1,18 @@
+Title: * C:\Users\Anik\Google Drive\Thesis_shared_folder\anik_thesis\simulations\pattern_with_memristor\memristor_resistance_measurement.asc
+Date: Mon Nov 02 21:19:49 2015
+Plotname: Operating Point
+Flags: real
+No. Variables: 6
+No. Points:            1
+Offset:   0.0000000000000000e+000
+Command: Linear Technology Corporation LTspice IV
+Backannotation: u1 te be xsv
+Variables:
+	0	V(m)	voltage
+	1	V(n001)	voltage
+	2	I(V1)	device_current
+	3	Ix(u1:TE)	subckt_current
+	4	Ix(u1:BE)	subckt_current
+	5	Ix(u1:XSV)	subckt_current
+Binary:
+)\è¬ı(º?ÕÃLΩ|D8|D∏|D8Ø≤˜)

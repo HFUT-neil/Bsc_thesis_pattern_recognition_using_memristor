@@ -1,0 +1,38 @@
+* HP Labs MIM Model proposed by Drs. Abdalla and Pickett
+* Connections:
+* TE: Top electrode
+* BE: Bottom electrode
+* WSV: External connection to plot state variable
+* that is not used otherwise
+.SUBCKT MEM_ABDALLA TE BE WSV
+.params phio=0.95 Lm=0.0998 w1=0.1261 foff=3.5e-6 ioff=115e-6
++aoff=1.2 fon=40e-6 ion=8.9e-6 aon=1.8 b=500e-6 wc=107e-3
++winit = 1.2
+* MIM IV Relationship
+G1 TE internal value={sgn(V(x))*pow((1/V(dw)),2)*0.0617*(V(phiI)*exp(-
++V(B)*V(sr))-(V(phiI)+abs(V(x)))*exp(-V(B)*V(sr2)))}
+Esr sr 0 value={sqrt(V(phiI))}
+Esr2 sr2 0 value={sqrt(V(phiI)+abs(V(x)))}
+* Series resistance of TiO2-x Layer
+Rs internal BE 215
+Eg x 0 value={V(TE)-V(internal)}
+Elamda Lmda 0 value={Lm/V(W)}
+Ew2 w2 0 value={w1+V(WSV)-(0.9183/(2.85+4*V(Lmda)-
++2*abs(V(x))))}
+EDw dw 0 value={V(w2)-w1}
+EB B 0 value={10.246*V(dw)}
+ER R 0 value={(V(w2)/w1)*(V(WSV)-w1)/(V(WSV)-V(w2))}
+EphiI phiI 0 value={phio-abs(V(x))*((w1+V(w2))/(2*V(WSV)))-
++1.15*V(Lmda)*V(WSV)*log(V(R))/V(dw)}
+* State variable integrating capactior
+C1 WSV 0 1e-9
+.ic V(WSV)=winit
+R WSV 0 1e8MEG
+Ec c 0 value={abs(V(internal)-V(BE))/215}
+Emon1 mon1 0 value={((V(WSV)-aoff)/wc)-(V(c)/b)}
+Emon2 mon2 0 value={(aon-V(WSV))/wc-(V(c)/b)}
+Goff 0 WSV value={foff*sinh(stp(V(x))*V(c)/ioff)*exp(-
++exp(V(mon1))-V(WSV)/wc)}
+Gon WSV 0 value={fon*sinh(stp(-V(x))*V(c)/ion)*exp(-
++exp(V(mon2))-V(WSV)/wc)}
+.ENDS MEM_ABDALLA

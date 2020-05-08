@@ -1,0 +1,14 @@
+Title: * C:\Users\Anik\Google Drive\Thesis_shared_folder\anik_thesis\simulations\pattern_with_memristor\Mrinmoy\Draft1.asc
+Date: Mon Dec 07 12:40:51 2015
+Plotname: Operating Point
+Flags: real
+No. Variables: 3
+No. Points:            1
+Offset:   0.0000000000000000e+000
+Command: Linear Technology Corporation LTspice IV
+Variables:
+	0	V(n001)	voltage
+	1	I(R1)	device_current
+	2	I(V1)	device_current
+Binary:
+™™™™™™©¿oºo:

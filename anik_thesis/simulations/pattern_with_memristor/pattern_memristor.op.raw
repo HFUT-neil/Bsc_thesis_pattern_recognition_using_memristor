@@ -1,0 +1,415 @@
+Title: * C:\Users\User\Google Drive\Thesis_shared_folder\anik_thesis\simulations\pattern_with_memristor\pattern_memristor.asc
+Date: Mon Nov 02 11:00:29 2015
+Plotname: Operating Point
+Flags: real
+No. Variables: 343
+No. Points:            1
+Offset:   0.0000000000000000e+000
+Command: Linear Technology Corporation LTspice IV
+Backannotation: u1 te be xsv
+Backannotation: u2 te be xsv
+Backannotation: u3 te be xsv
+Backannotation: u4 te be xsv
+Backannotation: u5 te be xsv
+Backannotation: u6 te be xsv
+Backannotation: u7 te be xsv
+Backannotation: u8 te be xsv
+Backannotation: u9 te be xsv
+Backannotation: u10 te be xsv
+Backannotation: u11 te be xsv
+Backannotation: u12 te be xsv
+Backannotation: u13 te be xsv
+Backannotation: u14 te be xsv
+Backannotation: u15 te be xsv
+Backannotation: u16 te be xsv
+Backannotation: u17 te be xsv
+Backannotation: u18 te be xsv
+Backannotation: u19 te be xsv
+Backannotation: u20 te be xsv
+Backannotation: u21 te be xsv
+Backannotation: u22 te be xsv
+Backannotation: u23 te be xsv
+Backannotation: u24 te be xsv
+Backannotation: u25 te be xsv
+Backannotation: u26 te be xsv
+Backannotation: u27 te be xsv
+Backannotation: u28 te be xsv
+Backannotation: u29 te be xsv
+Backannotation: u30 te be xsv
+Backannotation: x1 mem_in mem_out
+Backannotation: x2 mem_in mem_out
+Backannotation: x3 mem_in mem_out
+Backannotation: x4 mem_in mem_out
+Backannotation: x5 mem_in mem_out
+Backannotation: x6 mem_in mem_out
+Backannotation: x7 mem_in mem_out
+Backannotation: x8 mem_in mem_out
+Backannotation: x9 mem_in mem_out
+Backannotation: x10 mem_in mem_out
+Backannotation: x11 mem_in mem_out
+Backannotation: x12 mem_in mem_out
+Backannotation: x13 mem_in mem_out
+Backannotation: x14 mem_in mem_out
+Backannotation: x15 mem_in mem_out
+Backannotation: x16 mem_in mem_out
+Backannotation: x17 mem_in mem_out
+Backannotation: x18 mem_in mem_out
+Backannotation: x19 mem_in mem_out
+Backannotation: x20 mem_in mem_out
+Backannotation: x21 mem_in mem_out
+Backannotation: x22 mem_in mem_out
+Backannotation: x23 mem_in mem_out
+Backannotation: x24 mem_in mem_out
+Backannotation: x25 mem_in mem_out
+Backannotation: x26 mem_in mem_out
+Backannotation: x27 mem_in mem_out
+Backannotation: x28 mem_in mem_out
+Backannotation: x30 mem_in mem_out
+Backannotation: x29 mem_in mem_out
+Backannotation: u31 1 2 3 4 5
+Variables:
+	0	V(m)	voltage
+	1	V(1)	voltage
+	2	V(n004)	voltage
+	3	V(2)	voltage
+	4	V(n006)	voltage
+	5	V(3)	voltage
+	6	V(n010)	voltage
+	7	V(4)	voltage
+	8	V(n012)	voltage
+	9	V(5)	voltage
+	10	V(n015)	voltage
+	11	V(6)	voltage
+	12	V(n016)	voltage
+	13	V(7)	voltage
+	14	V(n018)	voltage
+	15	V(8)	voltage
+	16	V(n020)	voltage
+	17	V(9)	voltage
+	18	V(n022)	voltage
+	19	V(10)	voltage
+	20	V(n024)	voltage
+	21	V(11)	voltage
+	22	V(n026)	voltage
+	23	V(12)	voltage
+	24	V(n028)	voltage
+	25	V(13)	voltage
+	26	V(n030)	voltage
+	27	V(14)	voltage
+	28	V(n032)	voltage
+	29	V(15)	voltage
+	30	V(n034)	voltage
+	31	V(16)	voltage
+	32	V(n036)	voltage
+	33	V(17)	voltage
+	34	V(n038)	voltage
+	35	V(18)	voltage
+	36	V(n040)	voltage
+	37	V(19)	voltage
+	38	V(n042)	voltage
+	39	V(20)	voltage
+	40	V(n044)	voltage
+	41	V(21)	voltage
+	42	V(n046)	voltage
+	43	V(22)	voltage
+	44	V(n048)	voltage
+	45	V(23)	voltage
+	46	V(n050)	voltage
+	47	V(24)	voltage
+	48	V(n052)	voltage
+	49	V(25)	voltage
+	50	V(n054)	voltage
+	51	V(26)	voltage
+	52	V(n056)	voltage
+	53	V(27)	voltage
+	54	V(n058)	voltage
+	55	V(28)	voltage
+	56	V(n060)	voltage
+	57	V(29)	voltage
+	58	V(n062)	voltage
+	59	V(30)	voltage
+	60	V(n064)	voltage
+	61	V(n005)	voltage
+	62	V(n002)	voltage
+	63	V(n003)	voltage
+	64	V(n007)	voltage
+	65	V(n011)	voltage
+	66	V(n014)	voltage
+	67	V(n017)	voltage
+	68	V(n019)	voltage
+	69	V(n021)	voltage
+	70	V(n023)	voltage
+	71	V(n025)	voltage
+	72	V(n027)	voltage
+	73	V(n029)	voltage
+	74	V(n031)	voltage
+	75	V(n033)	voltage
+	76	V(n035)	voltage
+	77	V(n037)	voltage
+	78	V(n039)	voltage
+	79	V(n041)	voltage
+	80	V(n043)	voltage
+	81	V(n045)	voltage
+	82	V(n047)	voltage
+	83	V(n049)	voltage
+	84	V(n051)	voltage
+	85	V(n053)	voltage
+	86	V(n055)	voltage
+	87	V(n057)	voltage
+	88	V(n059)	voltage
+	89	V(n061)	voltage
+	90	V(n063)	voltage
+	91	V(n065)	voltage
+	92	V(n008)	voltage
+	93	V(n009)	voltage
+	94	V(n013)	voltage
+	95	I(R31)	device_current
+	96	I(R30)	device_current
+	97	I(R29)	device_current
+	98	I(R28)	device_current
+	99	I(R27)	device_current
+	100	I(R26)	device_current
+	101	I(R25)	device_current
+	102	I(R24)	device_current
+	103	I(R23)	device_current
+	104	I(R22)	device_current
+	105	I(R21)	device_current
+	106	I(R20)	device_current
+	107	I(R19)	device_current
+	108	I(R18)	device_current
+	109	I(R17)	device_current
+	110	I(R16)	device_current
+	111	I(R15)	device_current
+	112	I(R14)	device_current
+	113	I(R13)	device_current
+	114	I(R12)	device_current
+	115	I(R11)	device_current
+	116	I(R10)	device_current
+	117	I(R9)	device_current
+	118	I(R8)	device_current
+	119	I(R7)	device_current
+	120	I(R6)	device_current
+	121	I(R5)	device_current
+	122	I(R4)	device_current
+	123	I(R3)	device_current
+	124	I(R2)	device_current
+	125	I(R1)	device_current
+	126	I(V62)	device_current
+	127	I(V61)	device_current
+	128	I(V60)	device_current
+	129	I(V59)	device_current
+	130	I(V58)	device_current
+	131	I(V57)	device_current
+	132	I(V56)	device_current
+	133	I(V55)	device_current
+	134	I(V54)	device_current
+	135	I(V53)	device_current
+	136	I(V52)	device_current
+	137	I(V51)	device_current
+	138	I(V50)	device_current
+	139	I(V49)	device_current
+	140	I(V48)	device_current
+	141	I(V47)	device_current
+	142	I(V46)	device_current
+	143	I(V45)	device_current
+	144	I(V44)	device_current
+	145	I(V43)	device_current
+	146	I(V42)	device_current
+	147	I(V41)	device_current
+	148	I(V40)	device_current
+	149	I(V39)	device_current
+	150	I(V38)	device_current
+	151	I(V37)	device_current
+	152	I(V36)	device_current
+	153	I(V35)	device_current
+	154	I(V34)	device_current
+	155	I(V33)	device_current
+	156	I(V32)	device_current
+	157	I(V31)	device_current
+	158	I(V30)	device_current
+	159	I(V29)	device_current
+	160	I(V28)	device_current
+	161	I(V27)	device_current
+	162	I(V26)	device_current
+	163	I(V25)	device_current
+	164	I(V24)	device_current
+	165	I(V23)	device_current
+	166	I(V22)	device_current
+	167	I(V21)	device_current
+	168	I(V20)	device_current
+	169	I(V19)	device_current
+	170	I(V18)	device_current
+	171	I(V17)	device_current
+	172	I(V16)	device_current
+	173	I(V15)	device_current
+	174	I(V14)	device_current
+	175	I(V13)	device_current
+	176	I(V12)	device_current
+	177	I(V11)	device_current
+	178	I(V10)	device_current
+	179	I(V9)	device_current
+	180	I(V8)	device_current
+	181	I(V7)	device_current
+	182	I(V6)	device_current
+	183	I(V5)	device_current
+	184	I(V4)	device_current
+	185	I(V3)	device_current
+	186	I(V2)	device_current
+	187	I(V1)	device_current
+	188	Ix(u1:TE)	subckt_current
+	189	Ix(u1:BE)	subckt_current
+	190	Ix(u1:XSV)	subckt_current
+	191	Ix(u2:TE)	subckt_current
+	192	Ix(u2:BE)	subckt_current
+	193	Ix(u2:XSV)	subckt_current
+	194	Ix(u3:TE)	subckt_current
+	195	Ix(u3:BE)	subckt_current
+	196	Ix(u3:XSV)	subckt_current
+	197	Ix(u4:TE)	subckt_current
+	198	Ix(u4:BE)	subckt_current
+	199	Ix(u4:XSV)	subckt_current
+	200	Ix(u5:TE)	subckt_current
+	201	Ix(u5:BE)	subckt_current
+	202	Ix(u5:XSV)	subckt_current
+	203	Ix(u6:TE)	subckt_current
+	204	Ix(u6:BE)	subckt_current
+	205	Ix(u6:XSV)	subckt_current
+	206	Ix(u7:TE)	subckt_current
+	207	Ix(u7:BE)	subckt_current
+	208	Ix(u7:XSV)	subckt_current
+	209	Ix(u8:TE)	subckt_current
+	210	Ix(u8:BE)	subckt_current
+	211	Ix(u8:XSV)	subckt_current
+	212	Ix(u9:TE)	subckt_current
+	213	Ix(u9:BE)	subckt_current
+	214	Ix(u9:XSV)	subckt_current
+	215	Ix(u10:TE)	subckt_current
+	216	Ix(u10:BE)	subckt_current
+	217	Ix(u10:XSV)	subckt_current
+	218	Ix(u11:TE)	subckt_current
+	219	Ix(u11:BE)	subckt_current
+	220	Ix(u11:XSV)	subckt_current
+	221	Ix(u12:TE)	subckt_current
+	222	Ix(u12:BE)	subckt_current
+	223	Ix(u12:XSV)	subckt_current
+	224	Ix(u13:TE)	subckt_current
+	225	Ix(u13:BE)	subckt_current
+	226	Ix(u13:XSV)	subckt_current
+	227	Ix(u14:TE)	subckt_current
+	228	Ix(u14:BE)	subckt_current
+	229	Ix(u14:XSV)	subckt_current
+	230	Ix(u15:TE)	subckt_current
+	231	Ix(u15:BE)	subckt_current
+	232	Ix(u15:XSV)	subckt_current
+	233	Ix(u16:TE)	subckt_current
+	234	Ix(u16:BE)	subckt_current
+	235	Ix(u16:XSV)	subckt_current
+	236	Ix(u17:TE)	subckt_current
+	237	Ix(u17:BE)	subckt_current
+	238	Ix(u17:XSV)	subckt_current
+	239	Ix(u18:TE)	subckt_current
+	240	Ix(u18:BE)	subckt_current
+	241	Ix(u18:XSV)	subckt_current
+	242	Ix(u19:TE)	subckt_current
+	243	Ix(u19:BE)	subckt_current
+	244	Ix(u19:XSV)	subckt_current
+	245	Ix(u20:TE)	subckt_current
+	246	Ix(u20:BE)	subckt_current
+	247	Ix(u20:XSV)	subckt_current
+	248	Ix(u21:TE)	subckt_current
+	249	Ix(u21:BE)	subckt_current
+	250	Ix(u21:XSV)	subckt_current
+	251	Ix(u22:TE)	subckt_current
+	252	Ix(u22:BE)	subckt_current
+	253	Ix(u22:XSV)	subckt_current
+	254	Ix(u23:TE)	subckt_current
+	255	Ix(u23:BE)	subckt_current
+	256	Ix(u23:XSV)	subckt_current
+	257	Ix(u24:TE)	subckt_current
+	258	Ix(u24:BE)	subckt_current
+	259	Ix(u24:XSV)	subckt_current
+	260	Ix(u25:TE)	subckt_current
+	261	Ix(u25:BE)	subckt_current
+	262	Ix(u25:XSV)	subckt_current
+	263	Ix(u26:TE)	subckt_current
+	264	Ix(u26:BE)	subckt_current
+	265	Ix(u26:XSV)	subckt_current
+	266	Ix(u27:TE)	subckt_current
+	267	Ix(u27:BE)	subckt_current
+	268	Ix(u27:XSV)	subckt_current
+	269	Ix(u28:TE)	subckt_current
+	270	Ix(u28:BE)	subckt_current
+	271	Ix(u28:XSV)	subckt_current
+	272	Ix(u29:TE)	subckt_current
+	273	Ix(u29:BE)	subckt_current
+	274	Ix(u29:XSV)	subckt_current
+	275	Ix(u30:TE)	subckt_current
+	276	Ix(u30:BE)	subckt_current
+	277	Ix(u30:XSV)	subckt_current
+	278	Ix(x1:MEM_IN)	subckt_current
+	279	Ix(x1:MEM_OUT)	subckt_current
+	280	Ix(x2:MEM_IN)	subckt_current
+	281	Ix(x2:MEM_OUT)	subckt_current
+	282	Ix(x3:MEM_IN)	subckt_current
+	283	Ix(x3:MEM_OUT)	subckt_current
+	284	Ix(x4:MEM_IN)	subckt_current
+	285	Ix(x4:MEM_OUT)	subckt_current
+	286	Ix(x5:MEM_IN)	subckt_current
+	287	Ix(x5:MEM_OUT)	subckt_current
+	288	Ix(x6:MEM_IN)	subckt_current
+	289	Ix(x6:MEM_OUT)	subckt_current
+	290	Ix(x7:MEM_IN)	subckt_current
+	291	Ix(x7:MEM_OUT)	subckt_current
+	292	Ix(x8:MEM_IN)	subckt_current
+	293	Ix(x8:MEM_OUT)	subckt_current
+	294	Ix(x9:MEM_IN)	subckt_current
+	295	Ix(x9:MEM_OUT)	subckt_current
+	296	Ix(x10:MEM_IN)	subckt_current
+	297	Ix(x10:MEM_OUT)	subckt_current
+	298	Ix(x11:MEM_IN)	subckt_current
+	299	Ix(x11:MEM_OUT)	subckt_current
+	300	Ix(x12:MEM_IN)	subckt_current
+	301	Ix(x12:MEM_OUT)	subckt_current
+	302	Ix(x13:MEM_IN)	subckt_current
+	303	Ix(x13:MEM_OUT)	subckt_current
+	304	Ix(x14:MEM_IN)	subckt_current
+	305	Ix(x14:MEM_OUT)	subckt_current
+	306	Ix(x15:MEM_IN)	subckt_current
+	307	Ix(x15:MEM_OUT)	subckt_current
+	308	Ix(x16:MEM_IN)	subckt_current
+	309	Ix(x16:MEM_OUT)	subckt_current
+	310	Ix(x17:MEM_IN)	subckt_current
+	311	Ix(x17:MEM_OUT)	subckt_current
+	312	Ix(x18:MEM_IN)	subckt_current
+	313	Ix(x18:MEM_OUT)	subckt_current
+	314	Ix(x19:MEM_IN)	subckt_current
+	315	Ix(x19:MEM_OUT)	subckt_current
+	316	Ix(x20:MEM_IN)	subckt_current
+	317	Ix(x20:MEM_OUT)	subckt_current
+	318	Ix(x21:MEM_IN)	subckt_current
+	319	Ix(x21:MEM_OUT)	subckt_current
+	320	Ix(x22:MEM_IN)	subckt_current
+	321	Ix(x22:MEM_OUT)	subckt_current
+	322	Ix(x23:MEM_IN)	subckt_current
+	323	Ix(x23:MEM_OUT)	subckt_current
+	324	Ix(x24:MEM_IN)	subckt_current
+	325	Ix(x24:MEM_OUT)	subckt_current
+	326	Ix(x25:MEM_IN)	subckt_current
+	327	Ix(x25:MEM_OUT)	subckt_current
+	328	Ix(x26:MEM_IN)	subckt_current
+	329	Ix(x26:MEM_OUT)	subckt_current
+	330	Ix(x27:MEM_IN)	subckt_current
+	331	Ix(x27:MEM_OUT)	subckt_current
+	332	Ix(x28:MEM_IN)	subckt_current
+	333	Ix(x28:MEM_OUT)	subckt_current
+	334	Ix(x30:MEM_IN)	subckt_current
+	335	Ix(x30:MEM_OUT)	subckt_current
+	336	Ix(x29:MEM_IN)	subckt_current
+	337	Ix(x29:MEM_OUT)	subckt_current
+	338	Ix(u31:1)	subckt_current
+	339	Ix(u31:2)	subckt_current
+	340	Ix(u31:3)	subckt_current
+	341	Ix(u31:4)	subckt_current
+	342	Ix(u31:5)	subckt_current
+Binary:
+)\Âõ(¼?ÍÌL½;ù´ÍÌL½;ù´ÍÌL½;ù´ÍÌL½;ù´ÍÌL½;ù´ÍÌL½;ù´ÍÌL½;ù´ÍÌL½;ù´ÍÌL½;ù´ÍÌL½;ù´ÍÌL½;ù´ÍÌL½;ù´ÍÌL½;ù´ÍÌL½;ù´ÍÌL½;ù´ÍÌL½;ù´ÍÌL½;ù´ÍÌL½;ù´ÍÌL½;ù´ÍÌL½;ù´ÍÌL½;ù´ÍÌL½;ù´ÍÌL½;ù´ÍÌL½;ù´ÍÌL½;ù´ÍÌL½;ù´ÍÌL½;ù´ÍÌL½;ù´ÍÌL½;ù´ÍÌL½;ù´0u¹<ÍÌÌ=ÍÌÌ=ÍÌÌ½ÍÌÌ½ÍÌÌ=ÍÌÌ=ÍÌÌ=ÍÌÌ=ÍÌÌ=ÍÌÌ½ÍÌÌ=ÍÌÌ=ÍÌÌ=ÍÌÌ=ÍÌÌ=ÍÌÌ½ÍÌÌ=ÍÌÌ=ÍÌÌ=ÍÌÌ=ÍÌÌ=ÍÌÌ½ÍÌÌ=ÍÌÌ=ÍÌÌ=ÍÌÌ=ÍÌÌ½ÍÌÌ½ÍÌÌ½ÍÌÌ=   @9|À   À?&¸Ä¶¹Sâ6¹Sâ6¹Sâ6Ä¶Ä¶Ä¶Ä¶¹Sâ6Ä¶Ä¶Ä¶Ä¶Ä¶¹Sâ6Ä¶Ä¶Ä¶Ä¶Ä¶¹Sâ6Ä¶Ä¶Ä¶Ä¶Ä¶¹Sâ6¹Sâ6Ä¶Ä¶Ä¶D8¹Sâ6D8¹Sâ6D8¹Sâ6D8Ä¶D8Ä¶D8Ä¶D8Ä¶D8¹Sâ6D8Ä¶D8Ä¶D8Ä¶D8Ä¶D8Ä¶D8¹Sâ6D8Ä¶D8Ä¶D8Ä¶D8Ä¶D8Ä¶D8¹Sâ6D8Ä¶D8Ä¶D8Ä¶D8Ä¶D8Ä¶D8¹Sâ6D8¹Sâ6D8Ä¶D8Ä¶D8‹X/;İl-»D¸D8¯²÷)D¸D8¯²÷)D¸D8¯²÷)D¸D8¯²÷)D¸D8¯²÷)D¸D8¯²÷)D¸D8¯²÷)D¸D8¯²÷)D¸D8¯²÷)D¸D8¯²÷)D¸D8¯²÷)D¸D8¯²÷)D¸D8¯²÷)D¸D8¯²÷)D¸D8¯²÷)D¸D8¯²÷)D¸D8¯²÷)D¸D8¯²÷)D¸D8¯²÷)D¸D8¯²÷)D¸D8¯²÷)D¸D8¯²÷)D¸D8¯²÷)D¸D8¯²÷)D¸D8¯²÷)D¸D8¯²÷)D¸D8¯²÷)D¸D8¯²÷)D¸D8¯²÷)D¸D8¯²÷)D¸LL©/D¸LL©/D¸LL©/D¸LL©/D¸LL©/D¸LL©/D¸LL©/D¸LL©/D¸LL©/D¸LL©/D¸LL©/D¸LL©/D¸LL©/D¸LL©/D¸LL©/D¸LL©/D¸LL©/D¸LL©/D¸LL©/D¸LL©/D¸LL©/D¸LL©/D¸LL©/D¸LL©/D¸LL©/D¸LL©/D¸LL©/D¸LL©/D¸LL©/D¸LL©/¼Äº«ïu,İl-;‹X/»?&8

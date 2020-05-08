@@ -1,0 +1,56 @@
+Circuit: * C:\Users\User\Google Drive\Thesis_shared_folder\anik_thesis\simulations\pattern_with_memristor\pattern_memristor.asc
+
+V61: Removing PWL point (0.000425,-1)
+V59: Removing PWL point (0.000408,-1)
+V57: Removing PWL point (0.000431,-1)
+V55: Removing PWL point (0.000431,-1)
+V53: Removing PWL point (0.000438,-1)
+V51: Removing PWL point (0.000438,-1)
+V49: Removing PWL point (0.000425,-1)
+V47: Removing PWL point (0.000413,-1)
+V45: Removing PWL point (0.000399,-1)
+V43: Removing PWL point (0.000413,-1)
+V41: Removing PWL point (0.000413,-1)
+V39: Removing PWL point (0.000438,-1)
+V37: Removing PWL point (0.000425,-1)
+V35: Removing PWL point (0.000425,-1)
+V33: Removing PWL point (0.000431,-1)
+V31: Removing PWL point (0.000458,-1)
+V31: Removing PWL point (0.001098,-1)
+V29: Removing PWL point (0.000438,-1)
+V27: Removing PWL point (0.000438,-1)
+V25: Removing PWL point (0.000413,-1)
+V23: Removing PWL point (0.000413,-1)
+V21: Removing PWL point (0.000419,-1)
+V19: Removing PWL point (0.000425,-1)
+V17: Removing PWL point (0.000413,-1)
+V15: Removing PWL point (0.000413,-1)
+V13: Removing PWL point (0.000425,-1)
+V11: Removing PWL point (0.000425,-1)
+V9: Removing PWL point (0.000431,-1)
+V7: Removing PWL point (0.000431,-1)
+V5: Removing PWL point (0.000438,-1)
+V3: Removing PWL point (0.000438,-1)
+WARNING: Node M is floating.
+
+Direct Newton iteration for .op point succeeded.
+
+Date: Mon Nov 02 11:00:33 2015
+Total elapsed time: 4.939 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 11901
+traniter = 11865
+tranpoints = 5435
+accept = 5320
+rejected = 115
+matrix size = 764
+fillins = 222
+solver = Normal
+Thread vector: 181.1/89.3[4] 48.9/17.0[4] 16.8/7.9[4] 4.6/4.1[2]  2592/500
+Matrix Compiler1: 60.3 KB object code size  32.1/14.5/[10.3]
+Matrix Compiler2: 67.3 KB object code size  15.7/18.4/[11.0]
+
+

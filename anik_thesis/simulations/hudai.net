@@ -1,0 +1,37 @@
+* J:\thesis\simulations\hudai.asc
+XU1 N004 N003 M MEM_YAKOPCIC
+V1 N008 0 PWL file=J:\thesis\pwm_files_test\R2.txt
+V2 N009 0 PULSE(-50m 50m 0u 0u 0u 10u 20u)
+V3 N012 0 PULSE(-1 1 120u)
+V4 N010 0 PULSE(1 -1 120u)
+Xprogrammer1 N005 N008 programmer_block
+Xswitches1 N003 N004 N010 0 N001 N012 0 N005 N009 switch_block
+XU2 0 N006 N002 N011 N007 LT1037
+R1 N001 N007 1.98k
+R2 N007 N006 1k
+R3 N006 N009 1k
+V5 N002 0 5
+V6 N011 0 -5
+
+* block symbol definitions
+.subckt programmer_block memristor input
+V1 N001 0 5
+V2 N003 0 -5
+R1 N002 memristor 1k
+XU1 memristor input N002 opamp Aol=100K GBW=10Meg
+.include opamp.sub
+.ends programmer_block
+
+.subckt switch_block Mem_neg Mem_pos prog_on_pos prog_on_neg main_ckt main_ckton_pos main_ckton_neg programmer input
+S1 0 Mem_neg prog_on_pos prog_on_neg SW1
+S2 Mem_pos programmer prog_on_pos prog_on_neg SW1
+S3 main_ckt Mem_neg main_ckton_pos main_ckton_neg SW1
+S4 Mem_pos input main_ckton_pos main_ckton_neg SW1
+.model SW1 SW(Ron=1 Roff=1Meg Vt=.5 Vh=-.4)
+.ends switch_block
+
+.tran 200u
+.include yacopcic.txt
+.lib LTC.lib
+.backanno
+.end

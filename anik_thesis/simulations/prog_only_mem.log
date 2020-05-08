@@ -1,0 +1,26 @@
+Circuit: * C:\Users\Anik\Google Drive\Thesis_shared_folder\anik_thesis\simulations\prog_only_mem.asc
+
+Limiting rise time of source v1 to 5e-008
+Limiting fall time of source v1 to 5e-008
+WARNING: Node M is floating.
+
+Direct Newton iteration for .op point succeeded.
+
+Date: Mon Oct 05 15:48:36 2015
+Total elapsed time: 0.501 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 15029
+traniter = 15026
+tranpoints = 7414
+accept = 6013
+rejected = 1401
+matrix size = 3
+fillins = 0
+solver = Normal
+Matrix Compiler1: 86 bytes object code size  0.2/0.0/[0.0]
+Matrix Compiler2: 163 bytes object code size  0.1/0.1/[0.1]
+
+

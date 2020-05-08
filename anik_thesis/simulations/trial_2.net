@@ -1,0 +1,77 @@
+* J:\thesis\simulations\trial_2.asc
+XU1 N003 N002 M MEM_YAKOPCIC
+V3 N008 0 PWL file=J:\thesis\pwm_files_test\R1.txt
+V4 N011 0 PULSE(-50m 50m 0u 0u 0u 1m 2m)
+V7 N013 0 PULSE(-1 1 120u)
+V8 N010 0 PULSE(1 -1 120u)
+Xprogrammer N006 N008 programmer_block
+Xswitches N002 N003 N010 0 N001 N013 0 N006 N011 switch_block
+V1 N004 0 5
+V2 N012 0 -5
+R2 N009 N007 1k
+R3 N005 N009 1k
+R4 N005 N001 1.98k
+XU3 N019 N018 M MEM_YAKOPCIC
+V5 N025 0 PWL file=J:\thesis\pwm_files_test\R2.txt
+V6 N030 0 PULSE(-50m 50m 0u 0u 0u 2m 4m)
+V9 N032 0 PULSE(-1 1 120u)
+V10 N029 0 PULSE(1 -1 120u)
+Xprogrammer1 N023 N025 programmer_block
+Xswitches1 N018 N019 N029 0 N001 N032 0 N023 N030 switch_block
+V11 N020 0 5
+V12 N031 0 -5
+R1 N028 N024 1k
+R5 N021 N028 1k
+R6 N021 N001 1.98k
+XU5 N034 N033 M MEM_YAKOPCIC
+V13 N039 0 PWL file=J:\thesis\pwm_files_test\R0.txt
+V14 N041 0 50m
+V15 N044 0 PULSE(-1 1 120u)
+V16 N042 0 PULSE(1 -1 120u)
+Xprogrammer2 N037 N039 programmer_block
+Xswitches2 N033 N034 N042 0 N001 N044 0 N037 N041 switch_block
+V17 N035 0 5
+V18 N043 0 -5
+R7 N040 N038 1k
+R8 N036 N040 1k
+R9 N036 N001 1.98k
+R10 N017 N001 5.02k
+V19 N015 0 5
+V20 N027 0 -5
+S1 N011 N007 N013 0 SW1
+S2 N030 N024 N032 0 SW1
+S3 N041 N038 N044 0 SW1
+V21 N016 0 -10m
+V22 N014 0 5
+V23 N026 0 -5
+V24 vcom 0 0
+XU2 N009 vcom N005 opamp Aol=100K GBW=10Meg
+XU4 N028 vcom N021 opamp Aol=100K GBW=10Meg
+XU6 N040 vcom N036 opamp Aol=100K GBW=10Meg
+XU8 N001 vcom N017 opamp Aol=100K GBW=10Meg
+XU7 N017 N016 N014 N026 N022 LT1007
+
+* block symbol definitions
+.subckt programmer_block memristor input
+V1 N001 0 5
+V2 N003 0 -5
+R1 N002 memristor 1k
+XU1 memristor input N002 opamp Aol=100K GBW=10Meg
+.include opamp.sub
+.ends programmer_block
+
+.subckt switch_block Mem_neg Mem_pos prog_on_pos prog_on_neg main_ckt main_ckton_pos main_ckton_neg programmer input
+S1 0 Mem_neg prog_on_pos prog_on_neg SW1
+S2 Mem_pos programmer prog_on_pos prog_on_neg SW1
+S3 main_ckt Mem_neg main_ckton_pos main_ckton_neg SW1
+S4 Mem_pos input main_ckton_pos main_ckton_neg SW1
+.model SW1 SW(Ron=1 Roff=1Meg Vt=.5 Vh=-.4)
+.ends switch_block
+
+.tran 100m
+.include yacopcic.txt
+.model SW1 SW(Ron=1 Roff=1Meg Vt=.5 Vh=-.4)
+.include opamp.sub
+.lib LTC.lib
+.backanno
+.end

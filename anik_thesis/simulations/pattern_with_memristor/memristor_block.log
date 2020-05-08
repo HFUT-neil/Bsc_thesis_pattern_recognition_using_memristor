@@ -1,0 +1,124 @@
+Circuit: * C:\Users\Anik\Google Drive\Thesis_shared_folder\anik_thesis\simulations\pattern_with_memristor\memristor_block.asc
+
+WARNING: Node M is floating.
+WARNING: Node INPUT_1 is floating.
+WARNING: Node INPUT_1_NOT is floating.
+WARNING: Node INPUT_2 is floating.
+WARNING: Node INPUT_2_NOT is floating.
+WARNING: Node INPUT_3 is floating.
+WARNING: Node INPUT_3_NOT is floating.
+WARNING: Node INPUT_4 is floating.
+WARNING: Node INPUT_4_NOT is floating.
+WARNING: Node INPUT_5 is floating.
+WARNING: Node INPUT_5_NOT is floating.
+WARNING: Node INPUT_6 is floating.
+WARNING: Node INPUT_6_NOT is floating.
+WARNING: Node INPUT_7 is floating.
+WARNING: Node INPUT_7_NOT is floating.
+WARNING: Node INPUT_8 is floating.
+WARNING: Node INPUT_8_NOT is floating.
+WARNING: Node INPUT_9 is floating.
+WARNING: Node INPUT_9_NOT is floating.
+WARNING: Node INPUT_10 is floating.
+WARNING: Node INPUT_10_NOT is floating.
+WARNING: Node INPUT_11 is floating.
+WARNING: Node INPUT_11_NOT is floating.
+WARNING: Node INPUT_12 is floating.
+WARNING: Node INPUT_12_NOT is floating.
+WARNING: Node INPUT_13 is floating.
+WARNING: Node INPUT_13_NOT is floating.
+WARNING: Node INPUT_14 is floating.
+WARNING: Node INPUT_14_NOT is floating.
+WARNING: Node INPUT_15 is floating.
+WARNING: Node INPUT_15_NOT is floating.
+WARNING: Node INPUT_16 is floating.
+WARNING: Node INPUT_16_NOT is floating.
+WARNING: Node INPUT_17 is floating.
+WARNING: Node INPUT_17_NOT is floating.
+WARNING: Node INPUT_18 is floating.
+WARNING: Node INPUT_18_NOT is floating.
+WARNING: Node INPUT_19 is floating.
+WARNING: Node INPUT_19_NOT is floating.
+WARNING: Node INPUT_20 is floating.
+WARNING: Node INPUT_20_NOT is floating.
+WARNING: Node INPUT_21 is floating.
+WARNING: Node INPUT_21_NOT is floating.
+WARNING: Node INPUT_22 is floating.
+WARNING: Node INPUT_22_NOT is floating.
+WARNING: Node INPUT_23 is floating.
+WARNING: Node INPUT_23_NOT is floating.
+WARNING: Node INPUT_24 is floating.
+WARNING: Node INPUT_24_NOT is floating.
+WARNING: Node INPUT_25 is floating.
+WARNING: Node INPUT_25_NOT is floating.
+WARNING: Node INPUT_26 is floating.
+WARNING: Node INPUT_26_NOT is floating.
+WARNING: Node INPUT_27 is floating.
+WARNING: Node INPUT_27_NOT is floating.
+WARNING: Node INPUT_28 is floating.
+WARNING: Node INPUT_28_NOT is floating.
+WARNING: Node INPUT_29 is floating.
+WARNING: Node INPUT_29_NOT is floating.
+WARNING: Node INPUT_30 is floating.
+WARNING: Node INPUT_30_NOT is floating.
+WARNING: Node INPUT_31 is floating.
+WARNING: Node INPUT_31_NOT is floating.
+WARNING: Node INPUT_32 is floating.
+WARNING: Node INPUT_32_NOT is floating.
+WARNING: Node INPUT_33 is floating.
+WARNING: Node INPUT_33_NOT is floating.
+WARNING: Node INPUT_34 is floating.
+WARNING: Node INPUT_34_NOT is floating.
+WARNING: Node INPUT_35 is floating.
+WARNING: Node INPUT_35_NOT is floating.
+WARNING: Node INPUT_36 is floating.
+WARNING: Node INPUT_36_NOT is floating.
+WARNING: Node NC_01 is floating.
+
+Singular matrix:  Check node input_17_not
+   Iteration No. 1
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+Gmin = 1.07374
+Gmin = 0.115292
+Gmin = 0.0123794
+Gmin = 0.00132923
+Gmin = 0.000142725
+Gmin = 1.5325e-005
+Gmin = 1.6455e-006
+Gmin = 1.76685e-007
+Gmin = 1.89714e-008
+Gmin = 2.03704e-009
+Gmin = 2.18725e-010
+Gmin = 2.34854e-011
+Gmin = 2.52173e-012
+Gmin = 2.70769e-013
+Singular matrix:  Check node nc_01
+   Iteration No. 2
+Gmin = 0
+Singular matrix:  Check node nc_01
+   Iteration No. 1
+Gmin stepping failed
+
+Starting source stepping with srcstepmethod=0
+Singular matrix:  Check node input_17_not
+   Iteration No. 1
+Singular matrix:  Check node input_17_not
+   Iteration No. 2
+Could not converge to DC with sources off!
+Starting source stepping with srcstepmethod=1
+Singular matrix:  Check node input_17_not
+   Iteration No. 1
+Source Step = 3.0303%
+Source Step = 33.3333%
+Source Step = 63.6364%
+Source Step = 93.9394%
+Source stepping succeeded in finding the operating point.
+
+Singular matrix:  Check node m:x15:1#drain
+   Iteration No. 1
+Fatal Error: Singular matrix:  check node m:x15:1#drain
+   Iteration No. 1
+
+This circuit has floating nodes.

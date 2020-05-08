@@ -1,0 +1,22 @@
+Circuit: * C:\Users\Anik\Google Drive\Thesis_shared_folder\anik_thesis\simulations\pattern_with_memristor\Mrinmoy\Draft1.asc
+
+Direct Newton iteration for .op point succeeded.
+
+Date: Mon Dec 07 12:40:52 2015
+Total elapsed time: 0.553 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 184537
+traniter = 184534
+tranpoints = 92268
+accept = 92268
+rejected = 0
+matrix size = 2
+fillins = 0
+solver = Normal
+Matrix Compiler1: 36 bytes object code size  0.1/0.0/[0.0]
+Matrix Compiler2: off  [0.0]/0.1/0.1
+
+
